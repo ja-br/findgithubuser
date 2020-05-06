@@ -7,6 +7,7 @@ const searchUser = document.querySelector('#searchUser')
 searchUser.addEventListener('keyup', (e) => {
   //Get input text
   const inputText = e.target.value
+
   if (inputText !== '') {
     // HTTP request
     github.getUser(inputText)
@@ -21,5 +22,7 @@ searchUser.addEventListener('keyup', (e) => {
   } else {
     //clear profile
     ui.clearProfile()
+    ui.clearAlert()
+
   }
 })

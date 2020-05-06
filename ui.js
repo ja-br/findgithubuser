@@ -4,6 +4,7 @@ class UI {
   }
 
   showProfile(user) {
+    this.clearAlert()
     this.profile.innerHTML = `
       <div class="card card-body mb-3">
         <div class="row">
@@ -33,6 +34,7 @@ class UI {
   }
 
   showAlert(msg, className) {
+    this.clearAlert()
     const div = document.createElement('div')
 
     div.className = className
@@ -44,6 +46,14 @@ class UI {
     const search = document.querySelector('.search')
 
     container.insertBefore(div, search)
+  }
+
+  clearAlert() {
+    const currentAlert = document.querySelector('.alert')
+
+    if (currentAlert) {
+      currentAlert.remove()
+    }
   }
 
   clearProfile() {
